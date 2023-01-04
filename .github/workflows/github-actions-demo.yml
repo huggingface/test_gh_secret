@@ -12,7 +12,7 @@ on:
 jobs:
   Job1:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: prod
     steps:
       - name: Step 1
         run: |
