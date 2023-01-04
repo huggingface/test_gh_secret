@@ -1,13 +1,18 @@
 name: Test Child
 on: 
   workflow_call:
+    inputs:
+      environment:
+        type: string
+        description: environment to deploy to
+        required: true
     secrets:
       TEST_SECRET:
         required: true
 jobs:
   Job1:
     runs-on: ubuntu-latest
-    environment: TestEnvironment
+    environment: ${{ inputs.environment }}
     steps:
       - name: Step 1
         run: |
