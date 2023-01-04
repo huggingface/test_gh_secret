@@ -1,7 +1,6 @@
 name: GitHub Actions Demo
 on:
   workflow_call:
-    environment: prod
     secrets:
       MY_SECRET:
         required: true
@@ -9,6 +8,7 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    environment: prod
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: |
