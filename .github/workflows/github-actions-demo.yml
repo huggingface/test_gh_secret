@@ -1,6 +1,7 @@
 name: GitHub Actions Demo
 on:
   workflow_call:
+    environment: prod
     secrets:
       MY_SECRET:
         required: true
