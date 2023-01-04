@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "Starting this job"
       - run: |
           echo "the secret is ${{ secrets.MY_SECRET }}"
           if [ -z "${{ secrets.MY_SECRET }}" ]
