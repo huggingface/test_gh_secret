@@ -1,0 +1,20 @@
+name: GitHub Actions Demo
+on:
+  workflow_call:
+    secrets:
+      MY_SECRET:
+        required: true
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: |
+          echo "the secret is ${{ secrets.MY_SECRET }}"
+          if [ -z "${{ secrets.MY_SECRET }}" ]
+          then
+            echo "secret does not exist"
+          else
+            echo "secret exists"
+          fi
