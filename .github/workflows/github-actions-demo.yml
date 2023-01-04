@@ -1,9 +1,5 @@
 name: GitHub Actions Demo
-on:
-  workflow_call:
-    secrets:
-      MY_SECRET:
-        required: true
+on: [push]
 
 jobs:
   Explore-GitHub-Actions:
