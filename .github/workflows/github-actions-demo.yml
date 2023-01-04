@@ -1,21 +1,18 @@
-name: GitHub Actions Demo
-on:
+name: Test Child
+on: 
   workflow_call:
     secrets:
-      MY_SECRET:
+      TEST_SECRET:
         required: true
-
 jobs:
-  Explore-GitHub-Actions:
+  Job1:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: TestEnvironment
     steps:
-      - run: echo "Starting this job"
-      - run: |
-          echo "the secret is ${{ secrets.MY_SECRET }}"
-          if [ -z "${{ secrets.MY_SECRET }}" ]
-          then
-            echo "secret does not exist"
+      - name: Step 1
+        run: |
+          if [ "${{ secrets.TEST_SECRET }}" == "123" ]; then
+            echo "Match"
           else
-            echo "secret exists"
+            echo "Not matched"
           fi
