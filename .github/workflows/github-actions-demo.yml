@@ -2,8 +2,11 @@ name: Test Child
 on: 
   pull_request:
 
+permissions: {}
+
 jobs:
   Job1:
+    permissions: {}
     runs-on: ubuntu-latest
     steps:
       - name: Step 1
